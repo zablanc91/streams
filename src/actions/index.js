@@ -1,6 +1,6 @@
 //action creators will be called after successful log in/out through gapi library
 
-import {SIGN_IN, SIGN_OUT} from './types';
+import { SIGN_IN, SIGN_OUT } from './types';
 
 export const signIn = (userId) => {
     return {
