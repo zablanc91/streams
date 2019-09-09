@@ -1,3 +1,6 @@
+A client application for a streaming website. See stream_api for the api server code.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
