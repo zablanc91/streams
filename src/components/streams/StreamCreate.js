@@ -42,6 +42,7 @@ class StreamCreate extends React.Component {
     }
 
     //callback for our form, with this function going to ReduxForm's handleSubmit; automatically prevents default; formValues will contain the values of the input fields
+    //calls the createStream action creator
     //make sure to make an arrow function since this call back is using 'this'!
     onSubmit = (formValues) => {
         this.props.createStream(formValues);

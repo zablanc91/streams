@@ -80,7 +80,8 @@ class GoogleAuth extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    //isSignedIn is null, true, or false, refer to reducers/authReducer
+    //isSignedIn is null, true, or false; used to determine how to render sign in button
+    //pulled from the store (authreducer)
     return {isSignedIn: state.auth.isSignedIn}
 };
 
