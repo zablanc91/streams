@@ -21,11 +21,15 @@ export const signOut = () => {
     };
 };
 
+////NOTE: package.json has a start script to run our API server at localhost:3001, db.json will act as the api server and store data
+
 //action to create stream, this is called with a list of different values (formValues from StreamCreate) we enter to our form from StreamCreate as an argument
-//streams from db.json will do a POST with these arguments
+//will do a POST to 'streams' array in db.json
 //since these are async action creators, need to manually dispatch!
-export const createStream = (formValues) => async dispatch => {
-    const response = await streams.post('/streams', formValues);
+//makes use of getState to extract userId from store, need to know who made which stream 
+export const createStream = (formValues) => async (dispatch, getState) => {
+    const {userId} = getState().auth;
+    const response = await streams.post('/streams', {...formValues, userId});
 
     dispatch({type: CREATE_STREAM, payload: response.data});
 };
