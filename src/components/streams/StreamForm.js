@@ -72,7 +72,7 @@ const validate = (formValues) => {
 }
 
 //reduxForm returns a function, and we immediately call that with StreamForm (StreamCreate before refactor); props get added to component after connecting reduxForm
-//form (required) and validate(optional) are config properties passed in
+//form (required) and validate (optional) are config properties passed in
 export default reduxForm({
     form: 'streamForm',
     validate: validate

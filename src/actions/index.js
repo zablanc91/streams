@@ -52,9 +52,11 @@ export const fetchStream = (id) => async dispatch => {
 
 //formValues contains updates to the stream
 export const editStream = (id, formValues) => async dispatch => {
-    const response = await streams.put(`streams/${id}`, formValues);
+    const response = await streams.patch(`streams/${id}`, formValues);
 
     dispatch({type: EDIT_STREAM, payload: response.data});
+    //do some programmatic navigation after dispatch, go back to localhost:3000 root route
+    history.push('/')
 };
 
 export const deleteStream = (id) => async dispatch => {
