@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import history from '../history';
 
 const Modal = props => {
     //arguments to createPortal: jsx to display, and container element
+    //first div to exit out when clicking outside modal
+    //one lower to prevent event bubbling up and closing modal when clicking button
     return ReactDOM.createPortal(
-        <div className="ui dimmer modals visible active" onClick={() => history.push('/')} >
+        <div className="ui dimmer modals visible active" onClick={props.onDismiss} >
             <div className="ui standard modal visible active" onClick={(e) => e.stopPropagation() }>
                 <div className="header">
-                    Delete Stream
+                    {props.title}
                 </div>
                 <div className="content">
-                    Are you sure you want to delete this stream?
+                    {props.content}
                 </div>
                 <div className="actions">
-                    <button className="ui primary button">Delete</button>
-                    <button className="ui button">Cancel</button>
+                    {props.actions}
                 </div>
             </div>
         </div>,

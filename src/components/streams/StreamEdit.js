@@ -4,7 +4,7 @@ import { fetchStream, editStream } from '../../actions';
 import StreamForm from './StreamForm';
 
 class StreamEdit extends React.Component {
-    //call our fetchStream action creator, props.match.params.id is from Route parent components
+    //call our fetchStream action creator, props.match.params.id is from Route parent components; gets you the specific stream
     componentDidMount(){
         this.props.fetchStream(this.props.match.params.id)
     }
